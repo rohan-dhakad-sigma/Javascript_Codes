@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                var txtvalue = "rohan="+$("#text1").val();  
+                console.log(txtvalue);
+                
+                $.ajax({
+                    url:"update.php",
+                    type:"POST",
+                    dataType:"text",
+                    data: txtvalue,
+                    success:function(result)
+                    {
+                        alert(result);
+                        $("#div1").html(result);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h2>Update Paragraph</h2> <br>
+    <div id="div1">
+        A paragraph is a self-contained unit of discourse in writing dealing with a particular point or idea. A paragraph consists of three or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose. 
+    </div>
+    
+    <br> <br>
+
+    <label> <b>Text_Area: </b> </label> <br> <br>
+    <textarea name="area" id="text1" cols="30" rows="10"></textarea> <br> <br>
+
+    <button id="submit" value="submit">Submit</button>
+</body>
+</html>

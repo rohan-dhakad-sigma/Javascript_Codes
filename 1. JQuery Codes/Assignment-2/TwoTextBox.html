@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function()
+        {
+            $("button").click(function()
+            {
+                var txtvalue = $('#text1').val();
+                $('#text2').val(txtvalue);
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    
+    <h1>Text_BoxCopy Function</h1>
+
+    <input type="text" class="text1" id="text1" value="sigma1">
+    <br> <br>
+
+    <input type="text" class="text2" id="text2" value=""><br> <br>
+
+    <button>Copy Button</button>
+</body>
+</html>
